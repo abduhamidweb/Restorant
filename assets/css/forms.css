@@ -1,0 +1,50 @@
+form {
+  width: 80%;
+  padding: 30px;
+  border: 2px solid black;
+  margin: 40px auto;
+}
+form h2 {
+  text-align: center;
+  font-size: 40px;
+  text-transform: capitalize;
+  font-family: 'Courier New', Courier, monospace;
+}
+form .title {
+  font-size: 30px !important;
+  text-transform: capitalize;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+}
+form div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+form h4 {
+  text-align: center;
+}
+form textarea {
+  padding: 20px;
+  font-family: 'Courier New', Courier, monospace;
+  width: 100%;
+  font-size: 20px;
+  outline: none;
+  color: black;
+  margin: 5px auto;
+  display: flex;
+  justify-content: center;
+  font-weight: 600;
+  width: 50%;
+}
+form #update {
+  display: flex;
+  justify-content: center;
+  padding: 6px;
+  background: rgba(0, 0, 255, 0.452);
+  color: white;
+  border: none;
+  font-size: 30px;
+  width: 50%;
+  margin: 20px auto;
+}

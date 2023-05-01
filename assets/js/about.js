@@ -1,16 +1,15 @@
 let BASE_URL = 'http://localhost:5000/api/restaurants/'
 async function resuorc() {
-    let response = await fetch(BASE_URL + '644bf6d576130db63bdf9685');
-    let data = await response.json();
-    console.log(data.resource);
-    let allArray = data.resource;
-    allArray ? allArray.map((item) => {
-        let wrapper = document.createElement('div');
-        wrapper.innerHTML = `
+  let response = await fetch(BASE_URL + '644bf6d576130db63bdf9685');
+  let data = await response.json();
+  let allArray = data.resource;
+  allArray ? allArray.map((item) => {
+    console.log(item.videoLink);
+    let wrapper = document.createElement('div');
+    wrapper.innerHTML = `
                      <div class="row">
-
           <div class="col-lg-5 align-items-stretch video-box" style='background-image: url("assets/img/about.jpg");'>
-            <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4" data-vbtype="video"
+            <a href=${item.videoLink} class="venobox play-btn mb-4" data-vbtype="video"
               data-autoplay="true"></a>
           </div>
 
@@ -49,7 +48,7 @@ async function resuorc() {
 
         </div>
         `
-        aboutRenderPage.appendChild(wrapper)
-    }) : ""
+    aboutRenderPage.appendChild(wrapper)
+  }) : ""
 }
 resuorc()
