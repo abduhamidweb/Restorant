@@ -1,4 +1,5 @@
 let BASE_URL = 'http://localhost:5000/api/restaurants/'
+let BASE_URL2 = 'http://localhost:5000/api/'
 
     !(function () {
         let token = localStorage.getItem("token");
@@ -19,7 +20,8 @@ async function section1() {
     allArray.map(item => {
         // submit
         let buttonUpdate = document.createElement("button");
-        buttonUpdate.setAttribute("id", "update");
+        buttonUpdate.setAttribute("class", "update");
+        buttonUpdate.setAttribute("id", item._id);
         buttonUpdate.setAttribute("type", "submit");
         buttonUpdate.innerHTML = "Update"
         // lable and input
@@ -61,10 +63,9 @@ async function section1() {
     wrapper.append(staticOurFood);
     staticOurFood.addEventListener("submit", async (e) => {
         e.preventDefault();
-        
         let texts = document.querySelectorAll("textarea");
-
-        const response = await fetch("http://localhost:5000/api/resources/644bfbaefa1861b2927cd05c", {
+        let idUpdate = document.querySelector('.update').getAttribute("id");
+        const response = await fetch(BASE_URL2+ `resources/${idUpdate}`, {
             method: 'put',
             headers: {
                 token: localStorage.getItem("token"),
