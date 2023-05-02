@@ -1,4 +1,7 @@
-
+(() => {
+    let tokenbos = localStorage.getItem("tokenbos");
+    if (!tokenbos) return location = "loginboss.html";
+})();
 let BASE_URL = 'http://localhost:5000/api/restaurants'
 async function resuorc() {
     let response = await fetch(BASE_URL);
@@ -13,7 +16,7 @@ async function resuorc() {
 
         menu.append(rest_wrapper);
 
-    }) : " Restarantlar hali ishga tushmadi. Soon"
+    }) : " REstarantlar hali ishga tushmadi. soon"
 
 }
 resuorc()

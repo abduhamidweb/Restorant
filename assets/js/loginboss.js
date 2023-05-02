@@ -18,7 +18,7 @@ formcontr.addEventListener("submit", async (e) => {
         console.log(token);
         if (token) {
             localStorage.setItem("tokenbos", token);
-            location = "resaurants.html";
+            location = "bigboss.html";
         } else {
             alert("please enter your email address");
         }
